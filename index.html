@@ -19,7 +19,7 @@
   
   <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
   <script>
-    function distance(lon1, lat1, lon2, lat2) {
+    function distanceCal(lon1, lat1, lon2, lat2) {
       var R = 6371; // Radius of the earth in km
       var dLat = (lat2-lat1).toRad();  // Javascript functions in radians
       var dLon = (lon2-lon1).toRad(); 
@@ -40,9 +40,8 @@
     
     var x = document.getElementById("demo");
     function showPosition(position) {
-      distance=position.coords.longitude+"<br><br>Distance :"+distance(position.coords.longitude, position.coords.latitude,100.52459545365878,13.83224530765802).toFixed(2);
-      x.innerHTML = "<br>You location : " + position.coords.latitude +
-      "," +distance+" KM from boon boon"
+      distance=distanceCal(position.coords.longitude, position.coords.latitude,100.52459545365878,13.83224530765802).toFixed(2);
+      x.innerHTML = "<br>You location : " + position.coords.latitude + "," + position.coords.longitude + "<br><br>Distance :" + distance + " KM from boon boon"
       
       if(distance<1){
         document.getElementById("choose-table-div").style.display = "block";
