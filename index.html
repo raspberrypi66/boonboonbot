@@ -43,7 +43,7 @@
       distance=distanceCal(position.coords.longitude, position.coords.latitude,100.52459545365878,13.83224530765802).toFixed(2);
       x.innerHTML = "<br>You location : " + position.coords.latitude + "," + position.coords.longitude + "<br><br>Distance :" + distance + " KM from boon boon"
       console.log(distance);
-      if(distance<1){
+      if(distance>1){
         document.getElementById("choose-table-div").style.display = "block";
       }else{
         document.getElementById("choose-table-div").style.display = "none";
