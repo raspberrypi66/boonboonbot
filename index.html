@@ -8,20 +8,36 @@
   </style>
 </head>
 <body>
-  <img id="pictureUrl" width="25%">
+  <!--img id="pictureUrl" width="25%">
   <p id="userId"></p>
   <p id="displayName"></p>
-  <p id="statusMessage"></p>
+  <p id="statusMessage"></p-->
+  <div id="demo"></div>
   <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
+
+
+  
   <script>
+    var x = document.getElementById("demo");
+    function showPosition(position) {
+      x.innerHTML = "Latitude: " + position.coords.latitude +
+      "<br>Longitude: " + position.coords.longitude;
+    }
     function runApp() {
+      /*
       liff.getProfile().then(profile => {
         document.getElementById("pictureUrl").src = profile.pictureUrl;
         document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
         document.getElementById("displayName").innerHTML = '<b>DisplayName:</b> ' + profile.displayName;
         document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
-       }).catch(err => console.error(err));
+       }).catch(err => console.error(err));*/
+      if (navigator.geolocation) {
+        navigator.geolocation.watchPosition(showPosition);
+      } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+      }
     }
+    
     liff.init({ liffId: "1656056639-rxNnxDbE" }, () => {
       if (liff.isLoggedIn()) {
         runApp()
