@@ -29,6 +29,7 @@
     function callTable(tableNo){
       xhttp.open("GET", "https://longrun.dyndns.ws/engine/boonboonbot/lift?table="+tableNo, true);
       xhttp.send();
+      liff.closeWindow();
     }
     
     function distanceCal(lon1, lat1, lon2, lat2) {
