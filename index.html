@@ -40,8 +40,8 @@
     
     var x = document.getElementById("demo");
     function showPosition(position) {
-      x.innerHTML = "Latitude: " + position.coords.latitude +
-      "<br>Longitude: " + position.coords.longitude+"<br> Distance :"+distance(position.coords.longitude, position.coords.latitude, position.coords.latitude,100.6309176,13.8789761)+" KM"
+      x.innerHTML = "You location " + position.coords.latitude +
+      "," + position.coords.longitude+"<br> Distance :"+distance(position.coords.longitude, position.coords.latitude, position.coords.latitude,100.6309176,13.8789761)+" m from boon boon"
     }
     function runApp() {
       /*
