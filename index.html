@@ -12,7 +12,7 @@
   <p id="userId"></p>
   <p id="displayName"></p>
   <p id="statusMessage"></p-->
-  <div>Boon Boon's Location : 13.8311827,100.5159695</div>
+  <div>Boon Boon's Location : 13.83224530765802,100.52459545365878</div>
   <div id="demo"></div>
   <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
 
@@ -41,7 +41,7 @@
     var x = document.getElementById("demo");
     function showPosition(position) {
       x.innerHTML = "You location " + position.coords.latitude +
-      "," + position.coords.longitude+"<br> Distance :"+distance(position.coords.longitude, position.coords.latitude, position.coords.latitude,100.5159695,13.8311827)+" m from boon boon"
+      "," + position.coords.longitude+"<br> Distance :"+distance(position.coords.longitude, position.coords.latitude, position.coords.latitude,100.52459545365878,13.83224530765802)+" m from boon boon"
     }
     function runApp() {
       /*
