@@ -13,12 +13,24 @@
   <div id="demo"></div>
   <div id="choose-table-div" style="display:none">
     <p>You close enought to choose table</p>
-    <input type="button" value="Table No.1"> &nbsp; <input type="button" value="Table No.2"><br><br>
-    <input type="button" value="Table No.4"> &nbsp; <input type="button" value="Table No.4">
+    <input type="button" value="Table No.1" onClick=callTable(1)> &nbsp; <input type="button" value="Table No.2" onClick=callTable(2)><br><br>
+    <input type="button" value="Table No.3" onClick=callTable(3)> &nbsp; <input type="button" value="Table No.4" onClick=callTable(4)>
   </div>
+  
+  <p id="scanCode"></p>
+  <p>
+    <button id="btnScanCode" onclick="scanCode();">Scan Code</button>
+  </p>
   
   <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
   <script>
+    var xhttp = new XMLHttpRequest();
+    
+    function callTable(tableNo){
+      xhttp.open("GET", "https://longrun.dyndns.ws/engine/boonboonbot/lift?table="+tableNo, true);
+      xhttp.send();
+    }
+    
     function distanceCal(lon1, lat1, lon2, lat2) {
       var R = 6371; // Radius of the earth in km
       var dLat = (lat2-lat1).toRad();  // Javascript functions in radians
@@ -63,6 +75,14 @@
       } else {
         x.innerHTML = "Geolocation is not supported by this browser.";
       }
+    }
+    
+    function scanCode() {
+      liff.scanCode().then(result => {
+        const stringifiedResult = JSON.stringify(result);
+        alert(stringifiedResult);
+        document.getElementById("scanCode").textContent = stringifiedResult;
+      });
     }
     
     liff.init({ liffId: "1656056639-rxNnxDbE" }, () => {
