@@ -17,6 +17,10 @@
     <input type="button" value="Table No.3" onClick=callTable(3)> &nbsp; <input type="button" value="Table No.4" onClick=callTable(4)>
   </div>
   
+  <div id="out-of-service-div" style="display:none">
+    <p>You too far way from Boon Boon</p>
+  </div>
+  
   <p id="scanCode"></p>
   <p>
     <button id="btnScanCode" onclick="scanCode();">Scan Code</button>
@@ -58,8 +62,10 @@
       console.log(distance);
       if(distance<1){
         document.getElementById("choose-table-div").style.display = "block";
+        document.getElementById("out-of-service-div").style.display = "none";
       }else{
         document.getElementById("choose-table-div").style.display = "none";
+        document.getElementById("out-of-service-div").style.display = "block";
       }
     }
     
@@ -72,7 +78,7 @@
         document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;
        }).catch(err => console.error(err));*/
       if (navigator.geolocation) {
-        navigator.geolocation.watchPosition(showPosition);
+        navigator.geolocation.getCurrentPosition(showPosition);
       } else {
         x.innerHTML = "Geolocation is not supported by this browser.";
       }
