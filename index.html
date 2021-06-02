@@ -2,22 +2,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My LIFF v2</title>
-  <style>
-    #pictureUrl { display: block; margin: 0 auto }
-  </style>
+  <title>Geo-location Validate</title>
 </head>
 <body>
   <!--img id="pictureUrl" width="25%">
   <p id="userId"></p>
   <p id="displayName"></p>
   <p id="statusMessage"></p-->
-  <div>Boon Boon's Location : 13.83224530765802,100.52459545365878</div>
+  <div>Boon Boon's location : 13.83224530765802,100.52459545365878</div>
   <div id="demo"></div>
-  <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
-
-
+  <div id="choose-table-div" style="display:none">
+    <p>You close enought to choose table</p>
+    <input type="button" value="Table No.1"> &nbsp; <input type="button" value="Table No.2"><br/>
+    <input type="button" value="Table No.4"> &nbsp; <input type="button" value="Table No.4">
+  </div>
   
+  <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
   <script>
     function distance(lon1, lat1, lon2, lat2) {
       var R = 6371; // Radius of the earth in km
@@ -40,9 +40,17 @@
     
     var x = document.getElementById("demo");
     function showPosition(position) {
-      x.innerHTML = "You location " + position.coords.latitude +
-      "," + position.coords.longitude+"<br> Distance :"+distance(position.coords.longitude, position.coords.latitude,100.52459545365878,13.83224530765802).toFixed(2)+" KM from boon boon"
+      distance=position.coords.longitude+"<br><br>Distance :"+distance(position.coords.longitude, position.coords.latitude,100.52459545365878,13.83224530765802).toFixed(2);
+      x.innerHTML = "<br>You location : " + position.coords.latitude +
+      "," +distance+" KM from boon boon"
+      
+      if(distance<1){
+        document.getElementById("choose-table-div").style.display = "block";
+      }else{
+        document.getElementById("choose-table-div").style.display = "none";
+      }
     }
+    
     function runApp() {
       /*
       liff.getProfile().then(profile => {
