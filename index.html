@@ -18,7 +18,7 @@
     <input type="button" value="Table No.3" onClick=callTable(3)> &nbsp; <input type="button" value="Table No.4" onClick=callTable(4)>
   </div>
   
-  <div id="out-of-service-div" style="display:none">
+  <div id="out-of-service-div" style="display:none;background-color:#FFFFFF">
     <img id="Layer_0_c" src="Layer_0_c.png" style="display: block;margin-left: auto;margin-right: auto;">
     <div style="text-align:center">เสียดายจัง<br>มนุษย์ไม่ได้อยู่ในพื้นที่ให้บริการ</div>
     <img id="Image_1" src="Image_1.png" style="display: block;margin-left: auto;margin-right: auto;">
@@ -27,7 +27,7 @@
     </div>
     
     <div style="text-align:center">
-      <div id="___da" style="text-align:center">
+      <div style="text-align:center">
         <span>ที่ร้าน</span><img src="Group_1.png"><span>รักอัน คอฟฟี่</span><span style="font-style:normal;font-weight:normal;"> นะคร้าบบบบ</span>
       </div>
     </div>
@@ -105,7 +105,7 @@
     
     liff.init({ liffId: "1656056639-rxNnxDbE" }, () => {
       if (liff.isLoggedIn()) {
-        runApp()
+        //runApp()
       } else {
         liff.login();
       }
