@@ -23,10 +23,10 @@
   <p id="statusMessage"></p-->
   <!--div>Boon Boon's location : 13.83224530765802,100.52459545365878</div-->
   <div id="demo" style="display:block;width:100%;text-align:center">
-       <img id="Group_9" src="Group_9.png">
+       <img src="Group_9.png">
        <br/>
        <br/>
-    <span><b>ระบบกำลังตรวจสอบ</b><br/>ว่าคุณอยู่ในพื้นที่หรือไม่</span>
+    <span><b>ระบบกำลังตรวจสอบ<br/>ว่าคุณอยู่ในพื้นที่หรือไม่</b></span>
   </div>
   <div id="choose-table-div" style="display: none;width:100%;text-align:center">
     <img src="Layer_0_ca.png">
@@ -64,8 +64,7 @@
   
   <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
   <script>
-    boonboonLong=100.52459545365878;
-    boonboonLat=13.83224530765802;
+    
     var xhttp = new XMLHttpRequest();
     
     function callTable(tableNo){
@@ -99,6 +98,8 @@
     
     var x = document.getElementById("demo");
     function showPosition(position) {
+      var boonboonLong=100.52459545365878;
+      var boonboonLat=13.83224530765802;
       distance=distanceCal(position.coords.longitude, position.coords.latitude,boonboonLong,boonboonLat).toFixed(2);
       //x.innerHTML = "<br>Your location : " + position.coords.latitude + "," + position.coords.longitude + "<br><br>Distance :" + distance + " KM from boon boon"
       x.innerHTML=""
