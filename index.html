@@ -75,7 +75,8 @@
       document.getElementById("choose-table-success-div").style.display = "block";
       document.getElementById("choose-table-div").style.display = "none";
       document.getElementById("out-of-service-div").style.display = "none";
-      //liff.closeWindow();
+      setTimeout(function(){ liff.closeWindow(); }, 1500);
+      
     }
     
     function distanceCal(lon1, lat1, lon2, lat2) {
