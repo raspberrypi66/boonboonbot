@@ -54,7 +54,7 @@
   <div id="choose-table-success-div" style="display:none;background-color:#FFFFFF;width:100%;text-align:center">
     <img src="Image_3.png">
     <p>&nbsp;</p>
-    <div>บุญบุญกำลังไปหาแล้วครับ!</div>
+    <div <span style="font-style:normal;font-weight:bold;font-size:36;">บุญบุญกำลังไปหาแล้วครับ!</div>
   </div>
  
   
@@ -67,7 +67,8 @@
     function callTable(tableNo){
       xhttp.open("GET", "https://longrun.dyndns.ws/engine/boonboonbot/lift?table="+tableNo, true);
       xhttp.send();
-      document.getElementById("choose-table-success-div").style.display = "none";
+      document.body.style.backgroundColor = "white";
+      document.getElementById("choose-table-success-div").style.display = "block";
       document.getElementById("choose-table-div").style.display = "none";
       document.getElementById("out-of-service-div").style.display = "none";
       //liff.closeWindow();
@@ -102,6 +103,7 @@
         document.getElementById("choose-table-div").style.display = "block";
         document.getElementById("out-of-service-div").style.display = "none";
       }else{
+        document.body.style.backgroundColor = "white";
         document.getElementById("choose-table-div").style.display = "none";
         document.getElementById("out-of-service-div").style.display = "block";
       }
