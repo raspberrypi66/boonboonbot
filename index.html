@@ -36,6 +36,8 @@
   
   <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
   <script>
+    boonboonLong=102.52459545365878;
+    boonboonLat=13.83224530765802;
     var xhttp = new XMLHttpRequest();
     
     function callTable(tableNo){
@@ -65,7 +67,7 @@
     
     var x = document.getElementById("demo");
     function showPosition(position) {
-      distance=distanceCal(position.coords.longitude, position.coords.latitude,100.52459545365878,13.83224530765802).toFixed(2);
+      distance=distanceCal(position.coords.longitude, position.coords.latitude,boonboonLong,boonboonLat).toFixed(2);
       //x.innerHTML = "<br>Your location : " + position.coords.latitude + "," + position.coords.longitude + "<br><br>Distance :" + distance + " KM from boon boon"
       x.innerHTML=""
       console.log(distance);
