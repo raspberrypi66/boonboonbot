@@ -50,6 +50,12 @@
       </div>
     </div>
   </div>
+  
+  <div id="choose-table-success-div" style="display:none;background-color:#FFFFFF;width:100%;text-align:center">
+    <img src="Image_3.png">
+    <p>&nbsp;</p>
+    <div>บุญบุญกำลังไปหาแล้วครับ!</div>
+  </div>
  
   
   <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
@@ -61,7 +67,10 @@
     function callTable(tableNo){
       xhttp.open("GET", "https://longrun.dyndns.ws/engine/boonboonbot/lift?table="+tableNo, true);
       xhttp.send();
-      liff.closeWindow();
+      document.getElementById("choose-table-success-div").style.display = "none";
+      document.getElementById("choose-table-div").style.display = "none";
+      document.getElementById("out-of-service-div").style.display = "none";
+      //liff.closeWindow();
     }
     
     function distanceCal(lon1, lat1, lon2, lat2) {
