@@ -4,6 +4,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>เรียกน้องบุญบุญ</title>
+  <style type="text/css">
+    .tableCallBtn {
+      font-size:36;
+      font-weight:bold;
+      background-color:#FFFFFF;
+      border-width:4;
+      border-color:#000000;
+      width:150;
+      height:150
+    }
+  </style>
 </head>
 <body style="background-color:rgb(41, 253, 46)">
   <!--img id="pictureUrl" width="25%">
@@ -17,10 +28,12 @@
        <br/>
     <span><b>กำลังตรวจสอบตำแหน่งของมนุษย์</b><br/><br/>ว่าอยู่ใกล้บุญบุญแค่ไหน</span>
   </div>
-  <div id="choose-table-div" style="display:none">
-    <p>You close enought to choose table</p>
-    <input type="button" value="Table No.1" onClick=callTable(1)> &nbsp; <input type="button" value="Table No.2" onClick=callTable(2)><br><br>
-    <input type="button" value="Table No.3" onClick=callTable(3)> &nbsp; <input type="button" value="Table No.4" onClick=callTable(4)>
+  <div id="choose-table-div" style="display: block;width:100%;text-align:center">
+    <img src="Layer_0_ca.png">
+    <div style="padding:20px;"><span style="font-size:24px">เลือกโต๊ะที่ต้องการให้<br>บุญบุญไปหา ได้เลยคร้าบบ</span></div>
+    <input type="button" class="tableCallBtn" value="โต๊ะ 1" onclick="callTable(1)"> &nbsp; <input type="button" class="tableCallBtn" value="โต๊ะ 2" onclick="callTable(2)"><br><br>
+    <input type="button" class="tableCallBtn" value="โต๊ะ 3" onclick="callTable(3)"> &nbsp; <input type="button" class="tableCallBtn" value="โต๊ะ 4" onclick="callTable(4)"><br><br>
+    <input type="button" class="tableCallBtn" value="โต๊ะ 5" onclick="callTable(5)"> &nbsp; <input type="button" class="tableCallBtn" value="โต๊ะ 6" onclick="callTable(6)">
   </div>
   
   <div id="out-of-service-div" style="display:none;background-color:#FFFFFF">
