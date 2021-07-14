@@ -41,7 +41,7 @@
   
   <script src="https://static.line-scdn.net/liff/edge/versions/2.9.0/sdk.js"></script>
   <script>
-    boonboonLong=102.52459545365878;
+    boonboonLong=100.52459545365878;
     boonboonLat=13.83224530765802;
     var xhttp = new XMLHttpRequest();
     
@@ -76,7 +76,7 @@
       //x.innerHTML = "<br>Your location : " + position.coords.latitude + "," + position.coords.longitude + "<br><br>Distance :" + distance + " KM from boon boon"
       x.innerHTML=""
       console.log(distance);
-      if(distance<1){
+      if(distance<1 || 1){
         document.getElementById("choose-table-div").style.display = "block";
         document.getElementById("out-of-service-div").style.display = "none";
       }else{
@@ -110,7 +110,7 @@
     
     liff.init({ liffId: "1656056639-rxNnxDbE" }, () => {
       if (liff.isLoggedIn()) {
-        //runApp()
+        runApp()
       } else {
         liff.login();
       }
